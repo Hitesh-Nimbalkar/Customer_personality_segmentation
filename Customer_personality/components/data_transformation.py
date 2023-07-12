@@ -377,24 +377,34 @@ class DataTransformation:
             raise ApplicationException(e,sys) from e
    
    
-    def get_data_transformer_object(self,df):
+    def get_data_transformer_object(self, df):
         try:
             logging.info('Creating Data Transformer Object')
-            numerical_col=df.columns
+            numerical_col = df.columns
             numerical_pipeline = Pipeline(steps=[
                 ('scaler', StandardScaler()),
             ])
             preprocessor = ColumnTransformer([
                 ('numerical_pipeline', numerical_pipeline, numerical_col)
             ])
-            return preprocessor
-
+            
+            def positive_transform(X):
+                return X + abs(X.min())
+            
+            def inverse_positive_transform(X):
+                return X - abs(X.min())
+            
+            postprocessor = FunctionTransformer(func=positive_transform, inverse_func=inverse_positive_transform)
+            pipeline_with_postprocessing = Pipeline(steps=[
+                ('preprocessor', preprocessor),
+                ('postprocessor', postprocessor)
+            ])
+            
+            return pipeline_with_postprocessing
 
         except Exception as e:
-                logging.error('An error occurred during data transformation')
-                raise ApplicationException(e, sys) from e
-            
-
+            logging.error('An error occurred during data transformation')
+            raise ApplicationException(e, sys) from e
 
 
 
