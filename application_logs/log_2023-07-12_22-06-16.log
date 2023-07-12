@@ -1,0 +1,84 @@
+[2023-07-12 22:06:17,122] root - INFO - Training pipeline Config Completed : TrainingPipelineConfig(artifact_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact')
+[2023-07-12 22:06:17,122] root - INFO - Data Ingestion config: DataIngestionConfig(dataset_download_url='https://github.com/Hitesh-Nimbalkar/Customer_personality_data/blob/main/marketing_campaign.zip', ingested_data_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_ingestion\\2023-07-12 22-06-16\\ingested_Data', raw_data_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_ingestion\\2023-07-12 22-06-16\\raw_data', ingested_train_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_ingestion\\2023-07-12 22-06-16\\ingested_Data\\train_Data')
+[2023-07-12 22:06:17,131] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-07-12 22:06:17,131] root - INFO -  Raw Data directory : E:\Projects\Consumer_prediction\customer_segmentation_Artifacts\artifact\data_ingestion\2023-07-12 22-06-16\raw_data
+[2023-07-12 22:06:17,131] root - INFO - Downloading file from URL: https://github.com/Hitesh-Nimbalkar/Customer_personality_data/blob/main/marketing_campaign.zip?raw=true
+[2023-07-12 22:06:18,687] root - INFO - File downloaded successfully.
+[2023-07-12 22:06:18,689] root - INFO - Zip file extracted successfully.
+[2023-07-12 22:06:18,702] root - INFO - File: E:\Projects\Consumer_prediction\customer_segmentation_Artifacts\artifact\data_ingestion\2023-07-12 22-06-16\ingested_Data\marketing_campaign.csv has been downloaded and extracted successfully.
+[2023-07-12 22:06:18,702] root - INFO - Data Ingestion Artifact:[DataIngestionArtifact(train_file_path='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_ingestion\\2023-07-12 22-06-16\\ingested_Data\\marketing_campaign.csv', is_ingested=True, message='data ingestion completed successfully')]
+[2023-07-12 22:06:18,702] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Validation log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-07-12 22:06:18,704] root - INFO - Validation Process Started
+[2023-07-12 22:06:18,711] root - INFO -  Columns in ingested Data :Index(['ID', 'Year_Birth', 'Education', 'Marital_Status', 'Income', 'Kidhome',
+       'Teenhome', 'Dt_Customer', 'Recency', 'MntWines', 'MntFruits',
+       'MntMeatProducts', 'MntFishProducts', 'MntSweetProducts',
+       'MntGoldProds', 'NumDealsPurchases', 'NumWebPurchases',
+       'NumCatalogPurchases', 'NumStorePurchases', 'NumWebVisitsMonth',
+       'AcceptedCmp3', 'AcceptedCmp4', 'AcceptedCmp5', 'AcceptedCmp1',
+       'AcceptedCmp2', 'Complain', 'Z_CostContact', 'Z_Revenue', 'Response'],
+      dtype='object')
+[2023-07-12 22:06:18,733] root - INFO - Train_set status: is Train filename validated? True | is train column name validated? True | whole missing columns? TrueData type validation? True
+[2023-07-12 22:06:18,736] root - INFO - Exported validated train dataset to file: [E:\Projects\Consumer_prediction\customer_segmentation_Artifacts\artifact\data_validation\2023-07-12 22-06-16\validated_data\Train_data\marketing_campaign.csv]
+[2023-07-12 22:06:18,736] root - INFO - Data validation artifact: DataValidationArtifact(schema_file_path='E:\\Projects\\Consumer_prediction\\config\\schema.yaml', is_validated=True, message='Data_validation_performed ', validated_train_path='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_validation\\2023-07-12 22-06-16\\validated_data\\Train_data\\marketing_campaign.csv')
+[2023-07-12 22:06:18,736] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Validation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-07-12 22:06:18,736] root - INFO - Data Transformation Config: DataTransformationConfig(transformed_train_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_transformation\\2023-07-12 22-06-16\\transformed_data\\train', preprocessed_object_file_path='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_transformation\\2023-07-12 22-06-16\\preprocessed\\preprocessed.pkl', feature_engineering_object_file_path='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_transformation\\2023-07-12 22-06-16\\preprocessed\\feat_eng.pkl')
+[2023-07-12 22:06:18,736] root - INFO - 
+******************** Data Transformation log started ********************
+
+
+[2023-07-12 22:06:18,737] root - INFO - Obtaining training and test file path.
+[2023-07-12 22:06:18,737] root - INFO - Loading training and test data as pandas dataframe.
+[2023-07-12 22:06:18,742] root - INFO -  Accesig train and test data                          Train Data : E:\Projects\Consumer_prediction\customer_segmentation_Artifacts\artifact\data_validation\2023-07-12 22-06-16\validated_data\Train_data\marketing_campaign.csv
+[2023-07-12 22:06:18,742] root - INFO -  Traning columns Index(['ID', 'Year_Birth', 'Education', 'Marital_Status', 'Income', 'Kidhome',
+       'Teenhome', 'Dt_Customer', 'Recency', 'MntWines', 'MntFruits',
+       'MntMeatProducts', 'MntFishProducts', 'MntSweetProducts',
+       'MntGoldProds', 'NumDealsPurchases', 'NumWebPurchases',
+       'NumCatalogPurchases', 'NumStorePurchases', 'NumWebVisitsMonth',
+       'AcceptedCmp3', 'AcceptedCmp4', 'AcceptedCmp5', 'AcceptedCmp1',
+       'AcceptedCmp2', 'Complain', 'Z_CostContact', 'Z_Revenue', 'Response'],
+      dtype='object')
+[2023-07-12 22:06:18,742] root - INFO - Obtaining feature engineering object.
+[2023-07-12 22:06:18,742] root - INFO - 
+******************** Feature Engneering Started ********************
+
+
+[2023-07-12 22:06:18,742] root - INFO -  Numerical Columns , Categorical Columns , Target Column initialised in Feature engineering Pipeline 
+[2023-07-12 22:06:18,742] root - INFO - Applying feature engineering object on training dataframe and testing dataframe
+[2023-07-12 22:06:18,742] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Training data <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-07-12 22:06:18,742] root - INFO - Feature Enineering - Train Data 
+[2023-07-12 22:06:18,744] root - INFO - DataFrame shape before removing duplicates: (2216, 29)
+[2023-07-12 22:06:18,746] root - INFO - Removed 0 duplicate rows
+[2023-07-12 22:06:18,746] root - INFO - DataFrame shape after removing duplicates: (2216, 29)
+[2023-07-12 22:06:18,747] root - INFO - Shape before dropping NaN values: (2216, 29)
+[2023-07-12 22:06:18,747] root - INFO - Shape after dropping NaN values: (2216, 29)
+[2023-07-12 22:06:18,747] root - INFO - Dropped NaN values.
+[2023-07-12 22:06:18,747] root - INFO -  Modifying consumer Data 
+[2023-07-12 22:06:18,747] root - INFO -  Creating Total Offspring column
+[2023-07-12 22:06:18,748] root - INFO -  Creating Living_With column
+[2023-07-12 22:06:18,749] root - INFO -  Creating Family_Size column
+[2023-07-12 22:06:18,750] root - INFO -  Modifying  Education column
+[2023-07-12 22:06:18,750] root - INFO -  Creating Day_since_enrollment column
+[2023-07-12 22:06:18,756] root - ERROR - 
+        Error occured in script: [E:\Projects\Consumer_prediction\Customer_personality\pipeline\train.py] at 
+        line number: [101] 
+        error message: [
+        Error occured in script: [E:\Projects\Consumer_prediction\Customer_personality\pipeline\train.py] at 
+        line number: [60] 
+        error message: [
+        Error occured in script: [E:\Projects\Consumer_prediction\Customer_personality\components\data_transformation.py] at 
+        line number: [406] 
+        error message: [
+        Error occured in script: [E:\Projects\Consumer_prediction\Customer_personality\components\data_transformation.py] at 
+        line number: [295] 
+        error message: [
+        Error occured in script: [E:\Projects\Consumer_prediction\Customer_personality\components\data_transformation.py] at 
+        line number: [264] 
+        error message: [unsupported operand type(s) for -: 'str' and 'str']]]]]
+[2023-07-12 22:06:18,758] root - INFO - 
+******************** Data Transformation log completed ********************
+
+

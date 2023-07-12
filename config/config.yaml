@@ -1,0 +1,31 @@
+training_pipeline_config:
+  pipeline_name: customer_segmentation_Artifacts
+  artifact_dir: artifact
+
+data_ingestion_config:
+  dataset_download_url: "https://github.com/Hitesh-Nimbalkar/Customer_personality_data/blob/main/marketing_campaign.zip"
+  ingested_dir: ingested_Data
+  raw_data_dir: raw_data
+  ingested_train_dir: train_Data
+  ingested_test_dir: test_Data
+
+data_validation_config:
+  schema_dir: config
+  schema_file_name: schema.yaml 
+  Train_data: Train_data
+  Test_data: Test_data
+
+data_transformation_config:
+  transformed_dir: transformed_data
+  transformed_train_dir: train
+  transformed_test_dir: test
+  preprocessing_dir: preprocessed
+  feature_engineering_object_file_name: feat_eng.pkl
+  preprocessed_object_file_name: preprocessed.pkl
+
+model_trainer_config:
+  trained_model_dir: trained_model
+  model_file_name: model.pkl
+  base_accuracy: 0.6
+  model_config_dir: config
+  model_config_file_name: model.yaml

@@ -1,0 +1,46 @@
+
+drop_columns:
+ - Marital_Status
+ - Dt_Customer
+ - Year_Birth
+ - ID
+ - Kidhome
+ - Teenhome
+ - AcceptedCmp1
+ - AcceptedCmp2
+ - AcceptedCmp3
+ - AcceptedCmp4
+ - AcceptedCmp5
+ - Response
+ - Z_CostContact
+ - Z_Revenue
+ - NumWebPurchases
+ - NumCatalogPurchases
+ - NumStorePurchases
+ - NumWebVisitsMonth
+
+
+categorical_columns:
+ - Education
+ - Living_With
+
+scale_columns:
+ - Income,
+ - Recency
+ - Wines
+ - Fruits
+ - Meat
+ - Fish
+ - Sweets
+ - Gold
+ - NumDealsPurchases
+ - Complain
+ - Total_Offsprings
+ - Family_Size
+ - Days_since_enrollment
+ - Age
+ - Total_products
+ - Frequency
+ - Total_purchases
+ - Living_With
+ - 

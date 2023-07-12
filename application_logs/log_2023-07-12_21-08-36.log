@@ -1,0 +1,20 @@
+[2023-07-12 21:08:37,047] root - INFO - Training pipeline Config Completed : TrainingPipelineConfig(artifact_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact')
+[2023-07-12 21:08:37,048] root - INFO - Data Ingestion config: DataIngestionConfig(dataset_download_url='https://github.com/Hitesh-Nimbalkar/Customer_personality_data/blob/main/marketing_campaign.zip', ingested_data_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_ingestion\\2023-07-12 21-08-36\\ingested_Data', raw_data_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_ingestion\\2023-07-12 21-08-36\\raw_data', ingested_train_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_ingestion\\2023-07-12 21-08-36\\ingested_Data\\train_Data')
+[2023-07-12 21:08:37,049] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-07-12 21:08:37,049] root - INFO -  Raw Data directory : E:\Projects\Consumer_prediction\customer_segmentation_Artifacts\artifact\data_ingestion\2023-07-12 21-08-36\raw_data
+[2023-07-12 21:08:37,049] root - INFO - Downloading file from URL: https://github.com/Hitesh-Nimbalkar/Customer_personality_data/blob/main/marketing_campaign.zip?raw=true
+[2023-07-12 21:09:19,907] root - ERROR - 
+        Error occured in script: [E:\Projects\Consumer_prediction\Customer_personality\pipeline\train.py] at 
+        line number: [99] 
+        error message: [
+        Error occured in script: [E:\Projects\Consumer_prediction\Customer_personality\pipeline\train.py] at 
+        line number: [41] 
+        error message: [
+        Error occured in script: [E:\Projects\Consumer_prediction\Customer_personality\components\data_ingestion.py] at 
+        line number: [114] 
+        error message: [
+        Error occured in script: [E:\Projects\Consumer_prediction\Customer_personality\components\data_ingestion.py] at 
+        line number: [44] 
+        error message: [<urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>]]]]

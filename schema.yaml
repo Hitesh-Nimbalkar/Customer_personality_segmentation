@@ -1,0 +1,32 @@
+ColumnNames:
+  AcceptedCmp1: int64
+  AcceptedCmp2: int64
+  AcceptedCmp3: int64
+  AcceptedCmp4: int64
+  AcceptedCmp5: int64
+  Complain: int64
+  Dt_Customer: object
+  Education: object
+  ID: int64
+  Income: float64
+  Kidhome: int64
+  Marital_Status: object
+  MntFishProducts: int64
+  MntFruits: int64
+  MntGoldProds: int64
+  MntMeatProducts: int64
+  MntSweetProducts: int64
+  MntWines: int64
+  NumCatalogPurchases: int64
+  NumDealsPurchases: int64
+  NumStorePurchases: int64
+  NumWebPurchases: int64
+  NumWebVisitsMonth: int64
+  Recency: int64
+  Response: int64
+  Teenhome: int64
+  Year_Birth: int64
+  Z_CostContact: int64
+  Z_Revenue: int64
+FileName: marketing_campaign.csv
+NumberOfColumns: 29

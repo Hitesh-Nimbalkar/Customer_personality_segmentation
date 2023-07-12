@@ -1,0 +1,7 @@
+[2023-07-12 22:30:11,510] root - INFO - Training pipeline Config Completed : TrainingPipelineConfig(artifact_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact')
+[2023-07-12 22:30:11,510] root - INFO - Data Ingestion config: DataIngestionConfig(dataset_download_url='https://github.com/Hitesh-Nimbalkar/Customer_personality_data/blob/main/marketing_campaign.zip', ingested_data_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_ingestion\\2023-07-12 22-30-10\\ingested_Data', raw_data_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_ingestion\\2023-07-12 22-30-10\\raw_data', ingested_train_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact\\data_ingestion\\2023-07-12 22-30-10\\ingested_Data\\train_Data')
+[2023-07-12 22:30:11,519] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-07-12 22:30:11,519] root - INFO -  Raw Data directory : E:\Projects\Consumer_prediction\customer_segmentation_Artifacts\artifact\data_ingestion\2023-07-12 22-30-10\raw_data
+[2023-07-12 22:30:11,519] root - INFO - Downloading file from URL: https://github.com/Hitesh-Nimbalkar/Customer_personality_data/blob/main/marketing_campaign.zip?raw=true
