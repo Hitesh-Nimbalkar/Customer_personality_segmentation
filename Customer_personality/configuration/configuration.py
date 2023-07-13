@@ -177,7 +177,7 @@ class Configuration:
             saved_report_file_path=os.path.join(ROOT_DIR,SAVED_MODEL_DIRECTORY,MODEL_REPORT_FILE)
             saved_model_prediction_png=os.path.join(ROOT_DIR,SAVED_MODEL_DIRECTORY,'prediction.png')
             
-            saved_model_csv=os.path.join(ROOT_DIR,SAVED_MODEL_DIRECTORY,'rfm.csv')
+            saved_model_csv=os.path.join(ROOT_DIR,SAVED_MODEL_DIRECTORY,'data.csv')
             
             saved_model_config = SavedModelConfig(saved_model_file_path=saved_model_file_path,
                                             saved_report_file_path=saved_report_file_path,

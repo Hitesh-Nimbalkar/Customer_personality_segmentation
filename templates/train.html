@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Training Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="title" class="mt-4 flex flex-col justify-center items-center">
+        {% if error %}
+        <p>{{ error }}</p>
+        {% else %}
+        <p>{{ message }}</p>
+        {% endif %}
+    </div>
+
+    <div id="form" class="mt-4">
+        <form action="/train" method="post" class="text-center">
+            <div id="imageContainer" class="mt-4 rounded overflow-hidden">
+                <img src="{{ url_for('static', filename='images/prediction.png') }}" alt="Model Image">
+            </div>
+            <div>
+                <p class="mb-4">Number of Clusters: {{ num_clusters }}</p>
+            </div>
+            <br>
+            {% for i in range(num_clusters) %}
+            <label for="label{{ i }}">Label {{ i }}:</label>
+            <input type="text" name="label{{ i }}" id="label{{ i }}" class="mb-4 px-4 py-2 border border-gray-300 rounded">
+            {% endfor %}
+            <br>
+            <input class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Button to go to index.html -->
+    <div class="mt-4 flex justify-center">
+        <a href="{{ url_for('home') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Go to Home </a>
+    </div>
+</body>
+</html>

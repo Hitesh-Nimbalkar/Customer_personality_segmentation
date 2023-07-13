@@ -311,19 +311,7 @@ class Feature_Engineering(BaseEstimator, TransformerMixin):
             logging.info(f"Shapde Modified Data : {data_modified.shape}")
             
             
-            
-            # Ecoding categorical features
-            education_mapping = {
-                'Graduate': 3,
-                'Postgraduate': 2,
-                'Undergraduate': 1
-            }
 
-            data_modified['Education'] = data_modified['Education'].map(education_mapping).astype('int')
-            
-            data_modified['Living_With'] = data_modified['Living_With'].map({'Alone': 0, 'Partner': 1}).astype(int)
-            
-    
          
             data_modified.to_csv("data_modified.csv",index=False)
             logging.info(" Data Wrangaling Done ")
@@ -417,7 +405,9 @@ class DataTransformation:
 
             logging.info(f"Loading training and test data as pandas dataframe.")
             train_df = pd.read_csv(train_file_path,sep='\t')
-         
+
+            ID=train_df['ID']
+            
             
             
             logging.info(f" Accesig train and test data \
@@ -448,6 +438,21 @@ class DataTransformation:
             save_data(file_path = Feature_eng_train_file_path, data = train_df)
             
             
+            # Encoding 
+                        
+            # Ecoding categorical features
+            education_mapping = {
+                'Graduate': 3,
+                'Postgraduate': 2,
+                'Undergraduate': 1
+            }
+
+            train_df['Education'] = train_df['Education'].map(education_mapping).astype('int')
+            
+            train_df['Living_With'] = train_df['Living_With'].map({'Alone': 0, 'Partner': 1}).astype(int)
+            
+    
+            
                         
                                     ############ Input Fatures transformation########
             ## Preprocessing 
@@ -462,6 +467,9 @@ class DataTransformation:
             col =train_df.columns
             
             transformed_train_df = pd.DataFrame(train_arr, columns=col )
+            
+            # Passing Data of ID column 
+            transformed_train_df['ID']=ID
     
  
             

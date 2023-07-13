@@ -75,8 +75,11 @@ class Model:
         kmeans.fit(df)
         labels = kmeans.predict(df)
         df_kmeans=self.train_df
-        
+    
         df_kmeans['cluster'] =labels
+    
+        
+        
         
         logging.info(" Kmeans Fitted ")
         return df_kmeans,kmeans
@@ -123,7 +126,7 @@ class Model:
         df_kmeans,kmeans_model=self.perform_kmeans_clustering(df=data,n_clusters=optimal_cluster)
         
         
-        df_kmeans.to_csv('df_kmeans.csv')
+       # df_kmeans.to_csv('df_kmeans.csv')
         
         return df_kmeans,kmeans_model,optimal_cluster
     
@@ -283,6 +286,13 @@ class ModelTrainer:
             logging.info("Transformed Data found!!! Now, converting it into dataframe")
             train_df = pd.read_csv(transformed_train_file_path)
             
+            ID=train_df['ID']
+            
+            logging.info(" Drop ID Column ")
+            train_df=train_df.drop(columns='ID',axis=1)
+            
+            logging.info( f" Columns in to be trained data : {train_df.columns}")
+            
             # PCA transformation 
             
             logging.info(" PCA Transformation Started ........")
@@ -335,7 +345,30 @@ class ModelTrainer:
             logging.info(f" Model Selected :{model_name}")
             logging.info(f"-------------")
             
-       
+            
+            # Adding ID columns 
+            df_selected['ID']=ID
+            df_selected.drop(columns='Living_With',axis=1,inplace=True)
+            df_selected.drop(columns='Education',axis=1,inplace=True)
+          #  df_selected.to_csv('df_selected.csv')
+            
+            # Feature engineered csv
+            feature_eng_df_path=self.data_transformation_artifact.Feature_eng_train_file_path
+            
+            feature_eng_df=pd.read_csv(feature_eng_df_path)
+            logging.info(" Reverse mapping Education" )
+            
+            df_selected['Education'] = feature_eng_df['Education']
+
+            # Reverse encoding 'Living_With' feature
+            logging.info(" Reverse mapping Living_With" )
+            
+            df_selected['Living_With'] = feature_eng_df['Living_With']
+            logging.info("Reverse mapping done ")
+            
+            
+            
+            
             
             trained_model_directory=self.model_trainer_config.trained_model_directory
             os.makedirs(trained_model_directory,exist_ok=True)
