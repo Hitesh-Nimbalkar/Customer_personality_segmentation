@@ -24,23 +24,4 @@ categorical_columns:
  - Education
  - Living_With
 
-scale_columns:
- - Income,
- - Recency
- - Wines
- - Fruits
- - Meat
- - Fish
- - Sweets
- - Gold
- - NumDealsPurchases
- - Complain
- - Total_Offsprings
- - Family_Size
- - Days_since_enrollment
- - Age
- - Total_products
- - Frequency
- - Total_purchases
- - Living_With
- - 
+

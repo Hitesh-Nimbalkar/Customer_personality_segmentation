@@ -207,7 +207,7 @@ class Feature_Engineering(BaseEstimator, TransformerMixin):
         
         # Product Data 
         column_names = ['MntWines', 'MntFruits', 'MntMeatProducts', 'MntFishProducts', 'MntSweetProducts', 'MntGoldProds']
-        X = self.add_columns(X,new_column_name="Total_products",column_names=column_names)
+        X = self.add_columns(X,new_column_name="Total_Amount",column_names=column_names)
         
         # Rename columns for clarity and ease of use
         X = X.rename(columns={

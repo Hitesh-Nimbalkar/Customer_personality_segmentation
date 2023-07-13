@@ -1,0 +1,3 @@
+Model_name: K-means
+Silhouette_score: 0.36313056522942
+number_of_clusters: 4
