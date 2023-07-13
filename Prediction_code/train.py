@@ -2,7 +2,7 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-class train:
+class train_plot:
     def __init__(self,df) -> None:
         self.df=df.copy()
         

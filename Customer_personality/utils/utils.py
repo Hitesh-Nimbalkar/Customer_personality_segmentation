@@ -75,7 +75,7 @@ def save_data(file_path:str, data:pd.DataFrame):
 def load_object(file_path):
     try:
         with open(file_path, 'rb') as file:
-            obj = pickle.load(file)
+            obj = dill.load(file)
         return obj
     except Exception as e:
         print("Error occurred while loading object from pickle:", e)

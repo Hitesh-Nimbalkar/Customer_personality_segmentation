@@ -3,6 +3,7 @@ from flask import Flask, render_template,redirect,request
 from werkzeug.utils import secure_filename
 from Customer_personality.utils.utils import read_yaml_file
 from Prediction_code.batch import batch_prediction
+from Prediction_code.train import train_plot
 import os
 from Customer_personality.logger import logging
 from Customer_personality.constant import *

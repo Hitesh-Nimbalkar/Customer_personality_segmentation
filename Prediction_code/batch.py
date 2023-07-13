@@ -122,8 +122,11 @@ class batch_prediction:
             transformed_data = pca.transform(transformed_train_df) 
             
             df_pca = pd.DataFrame(transformed_data, columns=['F1', 'F2','F3'])
+            df_pca = df_pca.loc[:, ~df_pca.columns.str.contains('^Unnamed')]
             
-          #  df_pca.to_csv('pca.csv')
+            # Saving preprocessed dataframe 
+            file_path = os.path.join(FEATURE_ENG_PATH, 'pca.csv')
+            df_pca.to_csv(file_path)
             
             predictions = model.predict(df_pca)
             logging.info(f"Predictions done :{predictions}")

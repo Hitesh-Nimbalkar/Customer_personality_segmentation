@@ -1,0 +1,122 @@
+[2023-07-13 14:05:09,906] root - INFO - Training pipeline Config Completed : TrainingPipelineConfig(artifact_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact')
+[2023-07-13 14:05:09,907] root - INFO - Accessed Prediction image : Saved_Model\prediction.png
+[2023-07-13 14:05:09,911] werkzeug - WARNING -  * Debugger is active!
+[2023-07-13 14:05:09,912] werkzeug - INFO -  * Debugger PIN: 637-643-803
+[2023-07-13 14:05:13,477] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:05:13] "GET / HTTP/1.1" 200 -
+[2023-07-13 14:05:15,819] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:05:15] "GET /batch HTTP/1.1" 200 -
+[2023-07-13 14:05:16,138] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:05:16] "[36mGET /static/images/batch_prediction.png HTTP/1.1[0m" 304 -
+[2023-07-13 14:05:23,514] root - INFO - CSV received and Uploaded
+[2023-07-13 14:05:23,514] root - INFO - Loading the saved pipeline
+[2023-07-13 14:05:23,514] root - INFO - Feature eng Object acessed :Prediction_Files/feat_eng.pkl
+[2023-07-13 14:05:23,515] root - INFO - Preprocessor  Object accessed :Prediction_Files/preprocessed.pkl
+[2023-07-13 14:05:23,515] root - INFO - Model File Path: Saved_model/model.pkl
+[2023-07-13 14:05:23,527] root - INFO - DataFrame shape before removing duplicates: (2216, 29)
+[2023-07-13 14:05:23,530] root - INFO - Removed 0 duplicate rows
+[2023-07-13 14:05:23,530] root - INFO - DataFrame shape after removing duplicates: (2216, 29)
+[2023-07-13 14:05:23,531] root - INFO - Shape before dropping NaN values: (2216, 29)
+[2023-07-13 14:05:23,531] root - INFO - Shape after dropping NaN values: (2216, 29)
+[2023-07-13 14:05:23,531] root - INFO - Dropped NaN values.
+[2023-07-13 14:05:23,531] root - INFO -  ------ Modifying consumer Data ------
+[2023-07-13 14:05:23,532] root - INFO -  Creating Total Offspring column
+[2023-07-13 14:05:23,532] root - INFO -  Creating Living_With column
+[2023-07-13 14:05:23,534] root - INFO -  Creating Family_Size column
+[2023-07-13 14:05:23,535] root - INFO -  Modifying  Education column
+[2023-07-13 14:05:23,536] root - INFO -  Creating Day_since_enrollment column
+[2023-07-13 14:05:23,562] root - INFO -  Creating Age column
+[2023-07-13 14:05:23,562] root - INFO -  ------ Consumer Data Modified -------- 
+[2023-07-13 14:05:23,568] root - INFO - Columns before drop  Index(['ID', 'Year_Birth', 'Education', 'Marital_Status', 'Income', 'Kidhome',
+       'Teenhome', 'Dt_Customer', 'Recency', 'Wines', 'Fruits', 'Meat', 'Fish',
+       'Sweets', 'Gold', 'NumDealsPurchases', 'NumWebPurchases',
+       'NumCatalogPurchases', 'NumStorePurchases', 'NumWebVisitsMonth',
+       'AcceptedCmp3', 'AcceptedCmp4', 'AcceptedCmp5', 'AcceptedCmp1',
+       'AcceptedCmp2', 'Complain', 'Z_CostContact', 'Z_Revenue', 'Response',
+       'Total_Offsprings', 'Living_With', 'Family_Size',
+       'Days_since_enrollment', 'Age', 'Total_Amount', 'Frequency',
+       'Total_purchases'],
+      dtype='object')
+[2023-07-13 14:05:23,568] root - INFO -  Dropping Columns ['Marital_Status', 'Dt_Customer', 'Year_Birth', 'ID', 'Kidhome', 'Teenhome', 'AcceptedCmp1', 'AcceptedCmp2', 'AcceptedCmp3', 'AcceptedCmp4', 'AcceptedCmp5', 'Response', 'Z_CostContact', 'Z_Revenue', 'NumWebPurchases', 'NumCatalogPurchases', 'NumStorePurchases', 'NumWebVisitsMonth'] 
+[2023-07-13 14:05:23,568] root - INFO -  Columne after dropping : Index(['Education', 'Income', 'Recency', 'Wines', 'Fruits', 'Meat', 'Fish',
+       'Sweets', 'Gold', 'NumDealsPurchases', 'Complain', 'Total_Offsprings',
+       'Living_With', 'Family_Size', 'Days_since_enrollment', 'Age',
+       'Total_Amount', 'Frequency', 'Total_purchases'],
+      dtype='object')
+[2023-07-13 14:05:23,568] root - INFO -  Data Modification Done
+[2023-07-13 14:05:23,569] root - INFO -  Removing Outliers
+[2023-07-13 14:05:23,569] root - INFO - Original Data  : (2240, 29)
+[2023-07-13 14:05:23,569] root - INFO - Shape Modified Data : (2215, 19)
+[2023-07-13 14:05:23,569] root - INFO -  Data Wrangaling Done 
+[2023-07-13 14:05:23,576] root - INFO - Feature-engineered batch data saved as CSV.
+[2023-07-13 14:05:23,579] root - INFO - Columns before transformation: Education: int32, Income: float64, Recency: int64, Wines: int64, Fruits: int64, Meat: int64, Fish: int64, Sweets: int64, Gold: int64, NumDealsPurchases: int64, Complain: int64, Total_Offsprings: int64, Living_With: int32, Family_Size: int64, Days_since_enrollment: int64, Age: int64, Total_Amount: int64, Frequency: int64, Total_purchases: int64
+[2023-07-13 14:05:23,580] root - INFO - Transformed Data Shape: (2215, 19)
+[2023-07-13 14:05:23,581] root - INFO - Transformation completed successfully
+[2023-07-13 14:05:23,625] root - INFO -  PCA Transformation Started ........
+[2023-07-13 14:05:23,680] root - INFO - Predictions done :[1 0 1 ... 1 3 0]
+[2023-07-13 14:05:23,693] root - INFO - Batch predictions saved to 'E:\Projects\Consumer_prediction\batch_Prediction\prediction_csv\predictions.csv'.
+[2023-07-13 14:05:23,693] root - INFO -  Data in cluster report : {0: None, 1: None, 2: None, 3: None}
+[2023-07-13 14:05:23,816] matplotlib.legend - WARNING - No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+[2023-07-13 14:05:31,058] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:05:31] "[35m[1mPOST /batch HTTP/1.1[0m" 500 -
+[2023-07-13 14:05:31,071] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:05:31] "[36mGET /batch?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2023-07-13 14:05:31,378] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:05:31] "[36mGET /batch?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2023-07-13 14:05:31,643] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:05:31] "[36mGET /batch?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2023-07-13 14:05:31,719] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:05:31] "[36mGET /batch?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2023-07-13 14:05:39,155] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:05:39] "GET / HTTP/1.1" 200 -
+[2023-07-13 14:05:41,237] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:05:41] "GET /train HTTP/1.1" 200 -
+[2023-07-13 14:05:41,542] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:05:41] "GET /static/images/prediction.png HTTP/1.1" 200 -
+[2023-07-13 14:06:13,652] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:06:13] "POST /train HTTP/1.1" 200 -
+[2023-07-13 14:06:13,669] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:06:13] "GET /static/images/prediction.png HTTP/1.1" 200 -
+[2023-07-13 14:06:15,920] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:06:15] "GET / HTTP/1.1" 200 -
+[2023-07-13 14:06:17,175] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:06:17] "GET /batch HTTP/1.1" 200 -
+[2023-07-13 14:06:17,487] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:06:17] "[36mGET /static/images/batch_prediction.png HTTP/1.1[0m" 304 -
+[2023-07-13 14:06:22,131] root - INFO - CSV received and Uploaded
+[2023-07-13 14:06:22,131] root - INFO - Loading the saved pipeline
+[2023-07-13 14:06:22,131] root - INFO - Feature eng Object acessed :Prediction_Files/feat_eng.pkl
+[2023-07-13 14:06:22,131] root - INFO - Preprocessor  Object accessed :Prediction_Files/preprocessed.pkl
+[2023-07-13 14:06:22,131] root - INFO - Model File Path: Saved_model/model.pkl
+[2023-07-13 14:06:22,141] root - INFO - DataFrame shape before removing duplicates: (2216, 29)
+[2023-07-13 14:06:22,145] root - INFO - Removed 0 duplicate rows
+[2023-07-13 14:06:22,145] root - INFO - DataFrame shape after removing duplicates: (2216, 29)
+[2023-07-13 14:06:22,147] root - INFO - Shape before dropping NaN values: (2216, 29)
+[2023-07-13 14:06:22,147] root - INFO - Shape after dropping NaN values: (2216, 29)
+[2023-07-13 14:06:22,147] root - INFO - Dropped NaN values.
+[2023-07-13 14:06:22,148] root - INFO -  ------ Modifying consumer Data ------
+[2023-07-13 14:06:22,148] root - INFO -  Creating Total Offspring column
+[2023-07-13 14:06:22,148] root - INFO -  Creating Living_With column
+[2023-07-13 14:06:22,149] root - INFO -  Creating Family_Size column
+[2023-07-13 14:06:22,150] root - INFO -  Modifying  Education column
+[2023-07-13 14:06:22,151] root - INFO -  Creating Day_since_enrollment column
+[2023-07-13 14:06:22,173] root - INFO -  Creating Age column
+[2023-07-13 14:06:22,174] root - INFO -  ------ Consumer Data Modified -------- 
+[2023-07-13 14:06:22,178] root - INFO - Columns before drop  Index(['ID', 'Year_Birth', 'Education', 'Marital_Status', 'Income', 'Kidhome',
+       'Teenhome', 'Dt_Customer', 'Recency', 'Wines', 'Fruits', 'Meat', 'Fish',
+       'Sweets', 'Gold', 'NumDealsPurchases', 'NumWebPurchases',
+       'NumCatalogPurchases', 'NumStorePurchases', 'NumWebVisitsMonth',
+       'AcceptedCmp3', 'AcceptedCmp4', 'AcceptedCmp5', 'AcceptedCmp1',
+       'AcceptedCmp2', 'Complain', 'Z_CostContact', 'Z_Revenue', 'Response',
+       'Total_Offsprings', 'Living_With', 'Family_Size',
+       'Days_since_enrollment', 'Age', 'Total_Amount', 'Frequency',
+       'Total_purchases'],
+      dtype='object')
+[2023-07-13 14:06:22,178] root - INFO -  Dropping Columns ['Marital_Status', 'Dt_Customer', 'Year_Birth', 'ID', 'Kidhome', 'Teenhome', 'AcceptedCmp1', 'AcceptedCmp2', 'AcceptedCmp3', 'AcceptedCmp4', 'AcceptedCmp5', 'Response', 'Z_CostContact', 'Z_Revenue', 'NumWebPurchases', 'NumCatalogPurchases', 'NumStorePurchases', 'NumWebVisitsMonth'] 
+[2023-07-13 14:06:22,178] root - INFO -  Columne after dropping : Index(['Education', 'Income', 'Recency', 'Wines', 'Fruits', 'Meat', 'Fish',
+       'Sweets', 'Gold', 'NumDealsPurchases', 'Complain', 'Total_Offsprings',
+       'Living_With', 'Family_Size', 'Days_since_enrollment', 'Age',
+       'Total_Amount', 'Frequency', 'Total_purchases'],
+      dtype='object')
+[2023-07-13 14:06:22,178] root - INFO -  Data Modification Done
+[2023-07-13 14:06:22,178] root - INFO -  Removing Outliers
+[2023-07-13 14:06:22,179] root - INFO - Original Data  : (2240, 29)
+[2023-07-13 14:06:22,179] root - INFO - Shape Modified Data : (2215, 19)
+[2023-07-13 14:06:22,179] root - INFO -  Data Wrangaling Done 
+[2023-07-13 14:06:22,187] root - INFO - Feature-engineered batch data saved as CSV.
+[2023-07-13 14:06:22,190] root - INFO - Columns before transformation: Education: int32, Income: float64, Recency: int64, Wines: int64, Fruits: int64, Meat: int64, Fish: int64, Sweets: int64, Gold: int64, NumDealsPurchases: int64, Complain: int64, Total_Offsprings: int64, Living_With: int32, Family_Size: int64, Days_since_enrollment: int64, Age: int64, Total_Amount: int64, Frequency: int64, Total_purchases: int64
+[2023-07-13 14:06:22,192] root - INFO - Transformed Data Shape: (2215, 19)
+[2023-07-13 14:06:22,192] root - INFO - Transformation completed successfully
+[2023-07-13 14:06:22,230] root - INFO -  PCA Transformation Started ........
+[2023-07-13 14:06:22,246] root - INFO - Predictions done :[1 0 1 ... 1 3 0]
+[2023-07-13 14:06:22,255] root - INFO - Batch predictions saved to 'E:\Projects\Consumer_prediction\batch_Prediction\prediction_csv\predictions.csv'.
+[2023-07-13 14:06:22,256] root - INFO -  Data in cluster report : {0: 'Ordinary customer', 1: 'Best Customer', 2: 'Ordinary customer_0', 3: 'Good Customer'}
+[2023-07-13 14:06:25,822] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:06:25] "[35m[1mPOST /batch HTTP/1.1[0m" 500 -
+[2023-07-13 14:06:25,834] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:06:25] "[36mGET /batch?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2023-07-13 14:06:25,839] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:06:25] "[36mGET /batch?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2023-07-13 14:06:26,168] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:06:26] "[36mGET /batch?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2023-07-13 14:06:26,436] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:06:26] "[36mGET /batch?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -

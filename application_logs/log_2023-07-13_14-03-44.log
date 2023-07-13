@@ -1,0 +1,7 @@
+[2023-07-13 14:03:44,729] root - INFO - Training pipeline Config Completed : TrainingPipelineConfig(artifact_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact')
+[2023-07-13 14:03:44,730] root - INFO - Accessed Prediction image : Saved_Model\prediction.png
+[2023-07-13 14:03:44,734] werkzeug - WARNING -  * Debugger is active!
+[2023-07-13 14:03:44,736] werkzeug - INFO -  * Debugger PIN: 637-643-803
+[2023-07-13 14:03:47,221] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:03:47] "GET / HTTP/1.1" 200 -
+[2023-07-13 14:03:49,540] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:03:49] "GET /train HTTP/1.1" 200 -
+[2023-07-13 14:03:49,864] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:03:49] "GET /static/images/prediction.png HTTP/1.1" 200 -

@@ -1,0 +1,11 @@
+[2023-07-13 14:03:04,140] root - INFO - Training pipeline Config Completed : TrainingPipelineConfig(artifact_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact')
+[2023-07-13 14:03:04,141] root - INFO - Accessed Prediction image : Saved_Model\prediction.png
+[2023-07-13 14:03:04,145] werkzeug - WARNING -  * Debugger is active!
+[2023-07-13 14:03:04,146] werkzeug - INFO -  * Debugger PIN: 637-643-803
+[2023-07-13 14:03:06,582] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:03:06] "GET / HTTP/1.1" 200 -
+[2023-07-13 14:03:12,345] root - ERROR - 'Customer_cluster'
+[2023-07-13 14:03:12,364] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:03:12] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2023-07-13 14:03:12,548] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:03:12] "[36mGET /train?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2023-07-13 14:03:12,690] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:03:12] "[36mGET /train?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2023-07-13 14:03:13,033] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 14:03:13] "[36mGET /train?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2023-07-13 14:03:36,682] werkzeug - INFO -  * Detected change in 'E:\\Projects\\Consumer_prediction\\main.py', reloading

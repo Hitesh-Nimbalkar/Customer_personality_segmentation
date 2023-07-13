@@ -1,0 +1,10 @@
+[2023-07-13 14:01:13,408] root - INFO - Training pipeline Config Completed : TrainingPipelineConfig(artifact_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact')
+[2023-07-13 14:01:13,409] root - INFO - Accessed Prediction image : Saved_Model\prediction.png
+[2023-07-13 14:01:13,417] werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8050
+ * Running on http://192.168.29.233:8050
+[2023-07-13 14:01:13,417] werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2023-07-13 14:01:13,418] werkzeug - INFO -  * Restarting with stat
+[2023-07-13 14:02:07,168] werkzeug - INFO -  * Restarting with stat
+[2023-07-13 14:02:27,430] werkzeug - INFO -  * Restarting with stat
