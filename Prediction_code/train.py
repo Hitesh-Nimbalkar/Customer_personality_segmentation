@@ -7,7 +7,7 @@ class train:
         self.df=df.copy()
         
         
-    def plot_cluster_boxplot(self,  y_col,cluster_col='Customer_cluster'):
+    def plot_cluster_boxplot(self,  y_col='Total_Amount',cluster_col='Customer_cluster'):
         df = self.df
         
         # Set the style of the plot

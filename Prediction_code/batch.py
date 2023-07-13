@@ -73,7 +73,7 @@ class batch_prediction:
             ])
 
             # Read the input file
-            df = pd.read_csv(self.input_file_path)
+            df = pd.read_csv(self.input_file_path,sep='\t')
         
             # Apply feature engineering
             df = feature_engineering_pipeline.transform(df)
@@ -111,6 +111,7 @@ class batch_prediction:
             transformed_train_df = pd.DataFrame(transformed_data, columns=col )
             
             # Saving preprocessed dataframe 
+            file_path = os.path.join(FEATURE_ENG_PATH, 'preprocessed.csv')
             transformed_train_df.to_csv(file_path, index=False)
             
             # PCA Transformatio 
@@ -121,6 +122,8 @@ class batch_prediction:
             transformed_data = pca.transform(transformed_train_df) 
             
             df_pca = pd.DataFrame(transformed_data, columns=['F1', 'F2','F3'])
+            
+          #  df_pca.to_csv('pca.csv')
             
             predictions = model.predict(df_pca)
             logging.info(f"Predictions done :{predictions}")
@@ -133,6 +136,8 @@ class batch_prediction:
             #Adding cluster labels to the Dataframe
             feature_df['cluster']=df_predictions['cluster']
             
+            
+         #   feature_df.to_csv('Prediction.csv')
 
     
             # Save the predictions to a CSV file
@@ -146,7 +151,7 @@ class batch_prediction:
             
             return csv_path
     
-    def cluster_plot(self, df, model_name, cluster_column='cluster', x_col='Total_Amount', y_col='Income'):
+    def cluster_plot(self, df, model_name, cluster_column='Customer_cluster', x_col='Total_Amount', y_col='Income'):
         # Set the style of the plot
         sns.set(style="whitegrid")
 
@@ -176,6 +181,39 @@ class batch_prediction:
         filename = os.path.join(file_path, 'prediction.png')
         plt.savefig(filename)
 
+        return filename
+
+    def plot_cluster_boxplot(self,df,model_name, y_col='Total_Amount',cluster_col='Customer_cluster'):
+        df = df
+        
+        # Set the style of the plot
+        sns.set(style="whitegrid")
+
+        # Create the box plot
+        fig, ax = plt.subplots(figsize=(8, 6))
+        
+        # Swarm plot
+        sns.swarmplot(x=df[cluster_col], y=df[y_col], color="gray", alpha=0.5, ax=ax)
+
+        # Box plot
+        sns.boxenplot(x=df[cluster_col], y=df[y_col], palette="Set2", ax=ax)
+        
+        # Title
+        ax.set_title("Boxplot of Customers Clusters", pad=10, size=15)
+
+        # Adjust the plot layout
+        plt.tight_layout()
+
+        # Show the plot
+        plt.show()
+        # Create directory if it doesn't exist
+        file_path = os.path.join(BATCH_PREDICTION, model_name)
+        os.makedirs(file_path, exist_ok=True)
+
+        # Save the plot
+        filename = os.path.join(file_path, 'box_plot.png')
+        plt.savefig(filename)
+        
         return filename
 
 

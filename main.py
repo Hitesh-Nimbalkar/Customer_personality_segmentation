@@ -105,7 +105,7 @@ def perform_batch_prediction():
             prediction_df = pd.read_csv(prediction_csv_path)
 
             # Assign the values from data_dict to the "prediction" column of your existing DataFrame
-            prediction_df['cluster'] = prediction_df['cluster'].map(data_dict)
+            prediction_df['Customer_cluster'] = prediction_df['cluster'].map(data_dict)
             
             # Saving csv after Mapping 
             prediction_df.to_csv(prediction_csv_path)
@@ -114,10 +114,17 @@ def perform_batch_prediction():
             # -------------------------------------- Plotting the Batch prediction ----------------------------------------#
             model_name=report_data['Model_name']
             
-            batch_predicition_png=batch.cluster_plot(df=prediction_df,model_name=model_name)
+            batch_predicition_png=batch.cluster_plot(df=prediction_df,model_name=model_name,cluster_column='Customer_cluster')
+            
+            box_plot_png=batch.plot_cluster_boxplot(df=prediction_df,model_name=model_name,cluster_col='Customer_cluster')
 
             destination_static_folder='./static/images/batch_prediction.png'
             shutil.copy(batch_predicition_png,destination_static_folder)
+            
+            destination_static_folder='./static/images/box_plot.png'
+            shutil.copy(box_plot_png,destination_static_folder)
+            
+            
             
             output = "Batch Prediction Done "
             return render_template("batch.html", prediction_result=output,prediction_type='batch',batch_predicition_png=destination_static_folder)
@@ -210,12 +217,34 @@ def train():
         return render_template('train.html', error=error_message)
 
 
-
+'''
 @app.route('/train_plot', methods=['GET', 'POST'])
 def train():
     try:
         
+        # Load YAML data from file
+        with open('cluster_label.yaml', 'r') as file:
+            yaml_data = yaml.safe_load(file)
+
+        # Convert YAML data to dictionary
+        data_dict = {int(key): value for key, value in yaml_data.items()}
         
+        # Displaying disct data 
+        logging.info(f" Data in cluster report : {data_dict}")
+
+        # Create a DataFrame with the "prediction" column
+        prediction_df = pd.read_csv(csv_path)
+
+        # Assign the values from data_dict to the "prediction" column of your existing DataFrame
+        prediction_df['Customer_cluster'] = prediction_df['cluster'].map(data_dict)
+        
+        
+        
+        
+        
+        output = "Plot Prediction Done "
+        return render_template("train_plot.html", prediction_result=output,prediction_type='batch',hist_plot=destination_static_folder,box_plot=)
+
         
         
     except Exception as e:
@@ -223,7 +252,7 @@ def train():
         error_message = "An error occurred Please try again."
         return render_template('train_plot.html', error=error_message)
 
-
+'''
 
 
 

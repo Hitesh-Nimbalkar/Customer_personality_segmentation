@@ -1,0 +1,30 @@
+[2023-07-13 10:32:59,356] root - INFO - Training pipeline Config Completed : TrainingPipelineConfig(artifact_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact')
+[2023-07-13 10:32:59,357] root - INFO - Accessed Prediction image : Saved_Model\prediction.png
+[2023-07-13 10:32:59,363] werkzeug - WARNING -  * Debugger is active!
+[2023-07-13 10:32:59,365] werkzeug - INFO -  * Debugger PIN: 637-643-803
+[2023-07-13 10:33:07,388] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:33:07] "GET / HTTP/1.1" 200 -
+[2023-07-13 10:33:09,074] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:33:09] "GET /train HTTP/1.1" 200 -
+[2023-07-13 10:33:09,402] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:33:09] "GET /static/images/prediction.png HTTP/1.1" 200 -
+[2023-07-13 10:33:34,089] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:33:34] "POST /train HTTP/1.1" 200 -
+[2023-07-13 10:33:34,101] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:33:34] "GET /static/images/prediction.png HTTP/1.1" 200 -
+[2023-07-13 10:33:35,544] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:33:35] "GET / HTTP/1.1" 200 -
+[2023-07-13 10:33:37,689] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:33:37] "GET /batch HTTP/1.1" 200 -
+[2023-07-13 10:33:38,003] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:33:38] "[33mGET /static/images/batch_prediction.png HTTP/1.1[0m" 404 -
+[2023-07-13 10:34:06,335] root - INFO - CSV received and Uploaded
+[2023-07-13 10:34:06,335] root - INFO - Loading the saved pipeline
+[2023-07-13 10:34:06,336] root - INFO - Feature eng Object acessed :Prediction_Files/feat_eng.pkl
+[2023-07-13 10:34:06,336] root - INFO - Preprocessor  Object accessed :Prediction_Files/preprocessed.pkl
+[2023-07-13 10:34:06,336] root - INFO - Model File Path: Saved_model/model.pkl
+[2023-07-13 10:34:06,343] root - INFO - DataFrame shape before removing duplicates: (2240, 1)
+[2023-07-13 10:34:06,344] root - INFO - Removed 0 duplicate rows
+[2023-07-13 10:34:06,344] root - INFO - DataFrame shape after removing duplicates: (2240, 1)
+[2023-07-13 10:34:06,344] root - INFO - Shape before dropping NaN values: (2240, 1)
+[2023-07-13 10:34:06,345] root - INFO - Shape after dropping NaN values: (2240, 1)
+[2023-07-13 10:34:06,345] root - INFO - Dropped NaN values.
+[2023-07-13 10:34:06,345] root - INFO -  ------ Modifying consumer Data ------
+[2023-07-13 10:34:06,345] root - INFO -  Creating Total Offspring column
+[2023-07-13 10:34:06,356] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:34:06] "[35m[1mPOST /batch HTTP/1.1[0m" 500 -
+[2023-07-13 10:34:06,370] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:34:06] "GET /batch?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2023-07-13 10:34:06,588] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:34:06] "GET /batch?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2023-07-13 10:34:06,899] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:34:06] "GET /batch?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2023-07-13 10:34:07,164] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:34:07] "[36mGET /batch?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -

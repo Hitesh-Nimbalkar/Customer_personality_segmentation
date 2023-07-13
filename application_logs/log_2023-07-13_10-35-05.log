@@ -1,0 +1,63 @@
+[2023-07-13 10:35:06,136] root - INFO - Training pipeline Config Completed : TrainingPipelineConfig(artifact_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact')
+[2023-07-13 10:35:06,137] root - INFO - Accessed Prediction image : Saved_Model\prediction.png
+[2023-07-13 10:35:06,141] werkzeug - WARNING -  * Debugger is active!
+[2023-07-13 10:35:06,143] werkzeug - INFO -  * Debugger PIN: 637-643-803
+[2023-07-13 10:35:08,534] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:35:08] "GET / HTTP/1.1" 200 -
+[2023-07-13 10:35:13,933] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:35:13] "GET /train HTTP/1.1" 200 -
+[2023-07-13 10:35:14,260] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:35:14] "GET /static/images/prediction.png HTTP/1.1" 200 -
+[2023-07-13 10:35:33,290] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:35:33] "POST /train HTTP/1.1" 200 -
+[2023-07-13 10:35:33,302] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:35:33] "GET /static/images/prediction.png HTTP/1.1" 200 -
+[2023-07-13 10:35:34,644] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:35:34] "GET / HTTP/1.1" 200 -
+[2023-07-13 10:35:37,281] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:35:37] "GET /batch HTTP/1.1" 200 -
+[2023-07-13 10:35:37,582] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:35:37] "[33mGET /static/images/batch_prediction.png HTTP/1.1[0m" 404 -
+[2023-07-13 10:35:43,818] root - INFO - CSV received and Uploaded
+[2023-07-13 10:35:43,818] root - INFO - Loading the saved pipeline
+[2023-07-13 10:35:43,818] root - INFO - Feature eng Object acessed :Prediction_Files/feat_eng.pkl
+[2023-07-13 10:35:43,819] root - INFO - Preprocessor  Object accessed :Prediction_Files/preprocessed.pkl
+[2023-07-13 10:35:43,819] root - INFO - Model File Path: Saved_model/model.pkl
+[2023-07-13 10:35:43,828] root - INFO - DataFrame shape before removing duplicates: (2216, 29)
+[2023-07-13 10:35:43,833] root - INFO - Removed 0 duplicate rows
+[2023-07-13 10:35:43,833] root - INFO - DataFrame shape after removing duplicates: (2216, 29)
+[2023-07-13 10:35:43,834] root - INFO - Shape before dropping NaN values: (2216, 29)
+[2023-07-13 10:35:43,834] root - INFO - Shape after dropping NaN values: (2216, 29)
+[2023-07-13 10:35:43,834] root - INFO - Dropped NaN values.
+[2023-07-13 10:35:43,834] root - INFO -  ------ Modifying consumer Data ------
+[2023-07-13 10:35:43,834] root - INFO -  Creating Total Offspring column
+[2023-07-13 10:35:43,835] root - INFO -  Creating Living_With column
+[2023-07-13 10:35:43,836] root - INFO -  Creating Family_Size column
+[2023-07-13 10:35:43,837] root - INFO -  Modifying  Education column
+[2023-07-13 10:35:43,838] root - INFO -  Creating Day_since_enrollment column
+[2023-07-13 10:35:43,864] root - INFO -  Creating Age column
+[2023-07-13 10:35:43,864] root - INFO -  ------ Consumer Data Modified -------- 
+[2023-07-13 10:35:43,869] root - INFO - Columns before drop  Index(['ID', 'Year_Birth', 'Education', 'Marital_Status', 'Income', 'Kidhome',
+       'Teenhome', 'Dt_Customer', 'Recency', 'Wines', 'Fruits', 'Meat', 'Fish',
+       'Sweets', 'Gold', 'NumDealsPurchases', 'NumWebPurchases',
+       'NumCatalogPurchases', 'NumStorePurchases', 'NumWebVisitsMonth',
+       'AcceptedCmp3', 'AcceptedCmp4', 'AcceptedCmp5', 'AcceptedCmp1',
+       'AcceptedCmp2', 'Complain', 'Z_CostContact', 'Z_Revenue', 'Response',
+       'Total_Offsprings', 'Living_With', 'Family_Size',
+       'Days_since_enrollment', 'Age', 'Total_Amount', 'Frequency',
+       'Total_purchases'],
+      dtype='object')
+[2023-07-13 10:35:43,870] root - INFO -  Dropping Columns ['Marital_Status', 'Dt_Customer', 'Year_Birth', 'ID', 'Kidhome', 'Teenhome', 'AcceptedCmp1', 'AcceptedCmp2', 'AcceptedCmp3', 'AcceptedCmp4', 'AcceptedCmp5', 'Response', 'Z_CostContact', 'Z_Revenue', 'NumWebPurchases', 'NumCatalogPurchases', 'NumStorePurchases', 'NumWebVisitsMonth'] 
+[2023-07-13 10:35:43,870] root - INFO -  Columne after dropping : Index(['Education', 'Income', 'Recency', 'Wines', 'Fruits', 'Meat', 'Fish',
+       'Sweets', 'Gold', 'NumDealsPurchases', 'Complain', 'Total_Offsprings',
+       'Living_With', 'Family_Size', 'Days_since_enrollment', 'Age',
+       'Total_Amount', 'Frequency', 'Total_purchases'],
+      dtype='object')
+[2023-07-13 10:35:43,870] root - INFO -  Data Modification Done
+[2023-07-13 10:35:43,870] root - INFO -  Removing Outliers
+[2023-07-13 10:35:43,871] root - INFO - Original Data  : (2240, 29)
+[2023-07-13 10:35:43,871] root - INFO - Shape Modified Data : (2215, 19)
+[2023-07-13 10:35:43,871] root - INFO -  Data Wrangaling Done 
+[2023-07-13 10:35:43,881] root - INFO - Feature-engineered batch data saved as CSV.
+[2023-07-13 10:35:43,884] root - INFO - Columns before transformation: Education: int32, Income: float64, Recency: int64, Wines: int64, Fruits: int64, Meat: int64, Fish: int64, Sweets: int64, Gold: int64, NumDealsPurchases: int64, Complain: int64, Total_Offsprings: int64, Living_With: int32, Family_Size: int64, Days_since_enrollment: int64, Age: int64, Total_Amount: int64, Frequency: int64, Total_purchases: int64
+[2023-07-13 10:35:43,886] root - INFO - Transformed Data Shape: (2215, 19)
+[2023-07-13 10:35:43,886] root - INFO - Transformation completed successfully
+[2023-07-13 10:35:43,950] root - INFO -  PCA Transformation Started ........
+[2023-07-13 10:35:43,994] root - INFO - Predictions done :[1 0 1 ... 1 3 0]
+[2023-07-13 10:35:44,004] root - INFO - Batch predictions saved to 'E:\Projects\Consumer_prediction\batch_Prediction\prediction_csv\predictions.csv'.
+[2023-07-13 10:35:44,005] root - INFO -  Data in cluster report : {0: 'Ordinary customer', 1: 'Best Customer', 2: 'Ordinary customer', 3: 'Good Customer'}
+[2023-07-13 10:35:44,333] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:35:44] "POST /batch HTTP/1.1" 200 -
+[2023-07-13 10:35:44,346] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:35:44] "GET /static/images/batch_prediction.png HTTP/1.1" 200 -
+[2023-07-13 10:36:34,504] werkzeug - INFO -  * Detected change in 'E:\\Projects\\Consumer_prediction\\Prediction_code\\batch.py', reloading

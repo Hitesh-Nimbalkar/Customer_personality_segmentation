@@ -1,0 +1,64 @@
+[2023-07-13 10:38:56,353] root - INFO - Training pipeline Config Completed : TrainingPipelineConfig(artifact_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact')
+[2023-07-13 10:38:56,354] root - INFO - Accessed Prediction image : Saved_Model\prediction.png
+[2023-07-13 10:38:56,358] werkzeug - WARNING -  * Debugger is active!
+[2023-07-13 10:38:56,359] werkzeug - INFO -  * Debugger PIN: 637-643-803
+[2023-07-13 10:39:02,547] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:39:02] "GET / HTTP/1.1" 200 -
+[2023-07-13 10:39:10,483] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:39:10] "GET /train HTTP/1.1" 200 -
+[2023-07-13 10:39:10,800] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:39:10] "GET /static/images/prediction.png HTTP/1.1" 200 -
+[2023-07-13 10:39:44,943] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:39:44] "POST /train HTTP/1.1" 200 -
+[2023-07-13 10:39:44,961] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:39:44] "GET /static/images/prediction.png HTTP/1.1" 200 -
+[2023-07-13 10:39:46,314] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:39:46] "GET / HTTP/1.1" 200 -
+[2023-07-13 10:39:47,433] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:39:47] "GET /batch HTTP/1.1" 200 -
+[2023-07-13 10:39:47,745] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:39:47] "[36mGET /static/images/batch_prediction.png HTTP/1.1[0m" 304 -
+[2023-07-13 10:39:52,961] root - INFO - CSV received and Uploaded
+[2023-07-13 10:39:52,961] root - INFO - Loading the saved pipeline
+[2023-07-13 10:39:52,961] root - INFO - Feature eng Object acessed :Prediction_Files/feat_eng.pkl
+[2023-07-13 10:39:52,962] root - INFO - Preprocessor  Object accessed :Prediction_Files/preprocessed.pkl
+[2023-07-13 10:39:52,962] root - INFO - Model File Path: Saved_model/model.pkl
+[2023-07-13 10:39:52,974] root - INFO - DataFrame shape before removing duplicates: (2216, 29)
+[2023-07-13 10:39:52,978] root - INFO - Removed 0 duplicate rows
+[2023-07-13 10:39:52,978] root - INFO - DataFrame shape after removing duplicates: (2216, 29)
+[2023-07-13 10:39:52,980] root - INFO - Shape before dropping NaN values: (2216, 29)
+[2023-07-13 10:39:52,980] root - INFO - Shape after dropping NaN values: (2216, 29)
+[2023-07-13 10:39:52,981] root - INFO - Dropped NaN values.
+[2023-07-13 10:39:52,981] root - INFO -  ------ Modifying consumer Data ------
+[2023-07-13 10:39:52,981] root - INFO -  Creating Total Offspring column
+[2023-07-13 10:39:52,981] root - INFO -  Creating Living_With column
+[2023-07-13 10:39:52,983] root - INFO -  Creating Family_Size column
+[2023-07-13 10:39:52,984] root - INFO -  Modifying  Education column
+[2023-07-13 10:39:52,985] root - INFO -  Creating Day_since_enrollment column
+[2023-07-13 10:39:53,012] root - INFO -  Creating Age column
+[2023-07-13 10:39:53,013] root - INFO -  ------ Consumer Data Modified -------- 
+[2023-07-13 10:39:53,019] root - INFO - Columns before drop  Index(['ID', 'Year_Birth', 'Education', 'Marital_Status', 'Income', 'Kidhome',
+       'Teenhome', 'Dt_Customer', 'Recency', 'Wines', 'Fruits', 'Meat', 'Fish',
+       'Sweets', 'Gold', 'NumDealsPurchases', 'NumWebPurchases',
+       'NumCatalogPurchases', 'NumStorePurchases', 'NumWebVisitsMonth',
+       'AcceptedCmp3', 'AcceptedCmp4', 'AcceptedCmp5', 'AcceptedCmp1',
+       'AcceptedCmp2', 'Complain', 'Z_CostContact', 'Z_Revenue', 'Response',
+       'Total_Offsprings', 'Living_With', 'Family_Size',
+       'Days_since_enrollment', 'Age', 'Total_Amount', 'Frequency',
+       'Total_purchases'],
+      dtype='object')
+[2023-07-13 10:39:53,019] root - INFO -  Dropping Columns ['Marital_Status', 'Dt_Customer', 'Year_Birth', 'ID', 'Kidhome', 'Teenhome', 'AcceptedCmp1', 'AcceptedCmp2', 'AcceptedCmp3', 'AcceptedCmp4', 'AcceptedCmp5', 'Response', 'Z_CostContact', 'Z_Revenue', 'NumWebPurchases', 'NumCatalogPurchases', 'NumStorePurchases', 'NumWebVisitsMonth'] 
+[2023-07-13 10:39:53,020] root - INFO -  Columne after dropping : Index(['Education', 'Income', 'Recency', 'Wines', 'Fruits', 'Meat', 'Fish',
+       'Sweets', 'Gold', 'NumDealsPurchases', 'Complain', 'Total_Offsprings',
+       'Living_With', 'Family_Size', 'Days_since_enrollment', 'Age',
+       'Total_Amount', 'Frequency', 'Total_purchases'],
+      dtype='object')
+[2023-07-13 10:39:53,020] root - INFO -  Data Modification Done
+[2023-07-13 10:39:53,020] root - INFO -  Removing Outliers
+[2023-07-13 10:39:53,021] root - INFO - Original Data  : (2240, 29)
+[2023-07-13 10:39:53,021] root - INFO - Shape Modified Data : (2215, 19)
+[2023-07-13 10:39:53,021] root - INFO -  Data Wrangaling Done 
+[2023-07-13 10:39:53,033] root - INFO - Feature-engineered batch data saved as CSV.
+[2023-07-13 10:39:53,035] root - INFO - Columns before transformation: Education: int32, Income: float64, Recency: int64, Wines: int64, Fruits: int64, Meat: int64, Fish: int64, Sweets: int64, Gold: int64, NumDealsPurchases: int64, Complain: int64, Total_Offsprings: int64, Living_With: int32, Family_Size: int64, Days_since_enrollment: int64, Age: int64, Total_Amount: int64, Frequency: int64, Total_purchases: int64
+[2023-07-13 10:39:53,038] root - INFO - Transformed Data Shape: (2215, 19)
+[2023-07-13 10:39:53,038] root - INFO - Transformation completed successfully
+[2023-07-13 10:39:53,090] root - INFO -  PCA Transformation Started ........
+[2023-07-13 10:39:53,138] root - INFO - Predictions done :[1 0 1 ... 1 3 0]
+[2023-07-13 10:39:53,150] root - INFO - Batch predictions saved to 'E:\Projects\Consumer_prediction\batch_Prediction\prediction_csv\predictions.csv'.
+[2023-07-13 10:39:53,150] root - INFO -  Data in cluster report : {0: 'Ordinary customer', 1: 'Best customer', 2: 'Ordinary customer', 3: 'Good Customer'}
+[2023-07-13 10:39:53,555] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:39:53] "POST /batch HTTP/1.1" 200 -
+[2023-07-13 10:39:53,572] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:39:53] "GET /static/images/batch_prediction.png HTTP/1.1" 200 -
+[2023-07-13 10:45:25,370] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:45:25] "GET /batch HTTP/1.1" 200 -
+[2023-07-13 10:45:27,870] werkzeug - INFO - 127.0.0.1 - - [13/Jul/2023 10:45:27] "GET / HTTP/1.1" 200 -
