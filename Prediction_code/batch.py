@@ -6,9 +6,6 @@ import pandas as pd
 import pickle
 from sklearn.pipeline import Pipeline
 from Customer_personality.utils.utils import read_yaml_file,load_object
-from Customer_personality.entity.artifact_entity import ModelTrainerArtifact,DataTransformationArtifact
-import sys 
-import json
 from Customer_personality.constant import *
 from Customer_personality.constant import *
 from sklearn.decomposition import PCA
@@ -62,7 +59,7 @@ class batch_prediction:
             with open(self.transformer_file_path, 'rb') as f:
                 preprocessor = pickle.load(f)
 
-            logging.info(f"Preprocessor  Object acessed :{self.transformer_file_path}")
+            logging.info(f"Preprocessor  Object accessed :{self.transformer_file_path}")
             
             # Load the model separately
             model =load_object(file_path=self.model_file_path)
@@ -88,16 +85,29 @@ class batch_prediction:
             df.to_csv(file_path, index=False)
             logging.info("Feature-engineered batch data saved as CSV.")
             
+            feature_df=df.copy()
+            # Encoding 
+                        
+            # Ecoding categorical features
+            education_mapping = {
+                'Graduate': 3,
+                'Postgraduate': 2,
+                'Undergraduate': 1
+            }
+
+            feature_df['Education'] = feature_df['Education'].map(education_mapping).astype('int')
+            
+            feature_df['Living_With'] = feature_df['Living_With'].map({'Alone': 0, 'Partner': 1}).astype(int)
             
           
-            logging.info(f"Columns before transformation: {', '.join(f'{col}: {df[col].dtype}' for col in df.columns)}")
+            logging.info(f"Columns before transformation: {', '.join(f'{col}: {feature_df[col].dtype}' for col in feature_df.columns)}")
             
             # Transform the feature-engineered data using the preprocessor
-            transformed_data = preprocessor.transform(df)
+            transformed_data = preprocessor.transform(feature_df)
             logging.info(f"Transformed Data Shape: {transformed_data.shape}")
             
             logging.info("Transformation completed successfully")
-            col =df.columns
+            col =feature_df.columns
             transformed_train_df = pd.DataFrame(transformed_data, columns=col )
             
             # Saving preprocessed dataframe 
@@ -121,7 +131,8 @@ class batch_prediction:
             
             
             #Adding cluster labels to the Dataframe
-            transformed_train_df['cluster']=df_predictions['cluster']
+            feature_df['cluster']=df_predictions['cluster']
+            
 
     
             # Save the predictions to a CSV file
@@ -129,7 +140,7 @@ class batch_prediction:
             os.makedirs(BATCH_PREDICTION_PATH, exist_ok=True)
             csv_path = os.path.join(BATCH_PREDICTION_PATH,'predictions.csv')
             
-            transformed_train_df.to_csv(csv_path)
+            feature_df.to_csv(csv_path)
             logging.info(f"Batch predictions saved to '{csv_path}'.")
             
             

@@ -308,12 +308,9 @@ class Feature_Engineering(BaseEstimator, TransformerMixin):
             
             
             logging.info(f"Original Data  : {X.shape}")
-            logging.info(f"Shapde Modified Data : {data_modified.shape}")
-            
-            
-
+            logging.info(f"Shape Modified Data : {data_modified.shape}")
          
-            data_modified.to_csv("data_modified.csv",index=False)
+          #  data_modified.to_csv("data_modified.csv",index=False)
             logging.info(" Data Wrangaling Done ")
 
             return data_modified
@@ -438,7 +435,7 @@ class DataTransformation:
             save_data(file_path = Feature_eng_train_file_path, data = train_df)
             
             
-            # Encoding 
+            # Reverse  Encoding 
                         
             # Ecoding categorical features
             education_mapping = {
