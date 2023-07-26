@@ -1,6 +1,0 @@
-[2023-07-13 12:23:53,536] root - INFO - Training pipeline Config Completed : TrainingPipelineConfig(artifact_dir='E:\\Projects\\Consumer_prediction\\customer_segmentation_Artifacts\\artifact')
-[2023-07-13 12:23:53,537] root - INFO - Accessed Prediction image : Saved_Model\prediction.png
-[2023-07-13 12:23:53,543] werkzeug - WARNING -  * Debugger is active!
-[2023-07-13 12:23:53,544] werkzeug - INFO -  * Debugger PIN: 169-536-277
-[2023-07-13 12:26:24,755] werkzeug - INFO -  * Detected change in 'E:\\Projects\\Consumer_prediction\\.venv\\Lib\\site-packages\\dill\\__init__.py', reloading
-[2023-07-13 12:26:24,761] werkzeug - INFO -  * Detected change in 'E:\\Projects\\Consumer_prediction\\.venv\\Lib\\site-packages\\dill\\_dill.py', reloading

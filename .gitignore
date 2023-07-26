@@ -1,3 +1,6 @@
 customer_segmentation_Artifacts/
 venv/
 .venv/
+application_logs/
+batch_prediction/
+prediction_files/

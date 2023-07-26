@@ -218,42 +218,6 @@ def train():
         return render_template('train.html', error=error_message)
 
 
-'''
-@app.route('/train_plot', methods=['GET', 'POST'])
-def train():
-    try:
-        
-        # Load YAML data from file
-        with open('cluster_label.yaml', 'r') as file:
-            yaml_data = yaml.safe_load(file)
-
-        # Convert YAML data to dictionary
-        data_dict = {int(key): value for key, value in yaml_data.items()}
-        
-        # Displaying disct data 
-        logging.info(f" Data in cluster report : {data_dict}")
-
-        # Create a DataFrame with the "prediction" column
-        prediction_df = pd.read_csv(csv_path)
-
-        # Assign the values from data_dict to the "prediction" column of your existing DataFrame
-        prediction_df['Customer_cluster'] = prediction_df['cluster'].map(data_dict)
-        
-        
-        
-        
-        
-        output = "Plot Prediction Done "
-        return render_template("train_plot.html", prediction_result=output,prediction_type='batch',hist_plot=destination_static_folder,box_plot=)
-
-        
-        
-    except Exception as e:
-        logging.error(str(e))
-        error_message = "An error occurred Please try again."
-        return render_template('train_plot.html', error=error_message)
-
-'''
 
 
 
