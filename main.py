@@ -3,11 +3,10 @@ from flask import Flask, render_template,redirect,request
 from werkzeug.utils import secure_filename
 from Customer_personality.utils.utils import read_yaml_file
 from Prediction_code.batch import batch_prediction
-from Prediction_code.train import train_plot
+
 import os
 from Customer_personality.logger import logging
 from Customer_personality.constant import *
-from Customer_personality.entity.artifact_entity import ModelEvaluationArtifact,ModelPusherArtifact
 from Customer_personality.constant import *
 #from Prediction_code.predict_dump import prediction_upload
 from Customer_personality.pipeline.train import Pipeline
@@ -112,23 +111,10 @@ def perform_batch_prediction():
             prediction_df.to_csv(prediction_csv_path)
             
             
-            # -------------------------------------- Plotting the Batch prediction ----------------------------------------#
-            model_name=report_data['Model_name']
-            
-            batch_predicition_png=batch.cluster_plot(df=prediction_df,model_name=model_name,cluster_column='Customer_cluster')
-            
-            box_plot_png=batch.plot_cluster_boxplot(df=prediction_df,model_name=model_name,cluster_col='Customer_cluster')
-
-            destination_static_folder='./static/images/batch_prediction.png'
-            shutil.copy(batch_predicition_png,destination_static_folder)
-            
-            destination_static_folder='./static/images/box_plot.png'
-            shutil.copy(box_plot_png,destination_static_folder)
-            
             
             
             output = "Batch Prediction Done "
-            return render_template("batch.html", prediction_result=output,prediction_type='batch',batch_predicition_png=destination_static_folder)
+            return render_template("batch.html", prediction_result=output,prediction_type='batch')
         else:
             return render_template('batch.html', prediction_type='batch', error='Invalid file type')
 
