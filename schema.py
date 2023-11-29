@@ -21,4 +21,6 @@ def write_schema_yaml(csv_file):
         yaml.dump(schema, file)
 
 # Call the function with the CSV file path
-write_schema_yaml(r"E:\Projects\Consumer_prediction\Data\marketing_campaign.csv")
+file_path=os.path.join(os.getcwd(),"Data","marketing_campaign.csv")
+
+write_schema_yaml(file_path)

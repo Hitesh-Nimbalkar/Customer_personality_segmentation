@@ -15,4 +15,3 @@ pyaml
 requests
 scikit-learn
 scipy
--e .
