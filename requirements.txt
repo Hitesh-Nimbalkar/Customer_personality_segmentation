@@ -15,4 +15,5 @@ pyaml
 requests
 scikit-learn
 scipy
+statsmodels
 -e .
